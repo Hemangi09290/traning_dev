@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse 
 import re
+from django.shortcuts import render
+from django.utils.timezone import datetime
 
 # Create your views here.
 # This is a home page where Hello django msg will appear
@@ -10,7 +12,7 @@ def home(request):
 
 #Simple Python Program to see if a given url input name is ascii value or alphanumeric
 # accordingly print message
-# for this you need to update url with /hello/name as this is practise page without html
+# for this we need to update url with /hello/name as this is practise page without html
 def getData(request, name):
 
     # getting user’s name     
@@ -23,3 +25,15 @@ def getData(request, name):
 
     content = "Hello there, " + clean_name + "! It's " + name
     return HttpResponse(content)
+
+#using html page content this function will show current date time 
+#tfor this we need to  
+def hello_there(request, name):
+    return render(
+        request,
+        'hello/getData.html',
+        {
+            'name': name,
+            'date': datetime.now()
+        }
+    )
