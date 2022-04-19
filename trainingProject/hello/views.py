@@ -58,4 +58,8 @@ def getDict(request):
     for k, v in animals.items():
         result += "index : " + k  + "value : " +  v + "<br /> "
    
+<<<<<<< HEAD
     return HttpResponse("Dictionary data <br />" +result)
+=======
+    return HttpResponse("Dictionary data <br />" +result)
+>>>>>>> f7cfabf598ad4b628f0ba13bfcc23b6f09ccebbc
