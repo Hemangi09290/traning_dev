@@ -14,7 +14,6 @@ def home(request):
 # accordingly print message
 # for this we need to update url with /hello/name as this is practise page without html
 def getData(request, name):
-
     # getting user’s name     
     match_object = re.match("[a-zA-Z]+", name)
 
@@ -49,3 +48,14 @@ def getList(request):
         else:
             result += content + "\r\n " +f"{i} is not composite\r\n"
     return HttpResponse(result)
+
+#this is a dictionary example
+def getDict(request):
+    #animals = (([1,'dog'],[2,'cat'],[3,'lion']))
+    animals = {'1':'dog', '2':'cat', '3':'lion'}
+    animals['4']='tiger'
+    result = ""
+    for k, v in animals.items():
+        result += "index : " + k  + "value : " +  v + "<br /> "
+   
+    return HttpResponse("Dictionary data <br />" +result)

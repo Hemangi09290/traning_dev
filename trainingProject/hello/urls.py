@@ -5,6 +5,7 @@ from hello import views
 urlpatterns = [
     path("", views.home, name="home"),
     path("hello", views.getList, name="getList"),
+    path("dic", views.getDict, name="getDict"),
     path("hello/<name>", views.hello_there, name="hello_there"),
     path("hello/<name>", views.getData, name="getData"),
 ]
