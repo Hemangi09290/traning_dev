@@ -27,13 +27,25 @@ def getData(request, name):
     return HttpResponse(content)
 
 #using html page content this function will show current date time 
-#tfor this we need to  
+#for this we need to  
 def hello_there(request, name):
     return render(
         request,
         'hello/getData.html',
         {
             'name': name,
-            'date': datetime.now()
+            'date': datetime.now(),
         }
     )
+
+#this is a List example
+def getList(request):
+    numbers_list = [1,2,3,4]
+    content ="Sample demo of List\r\n"
+    result = ""
+    for i in numbers_list:
+        if i%2==0:
+            result += content + "\r\n " +f"{i} is composite\r\n"
+        else:
+            result += content + "\r\n " +f"{i} is not composite\r\n"
+    return HttpResponse(result)
